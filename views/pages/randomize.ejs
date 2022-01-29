@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+
+<html>
+<body>
+
+<form action="/">
+    <input type="submit" value="Return to Main Page">
+</form>
+
+<h1>The Winnner is:</h1>
+<% if (randomized === null) { %>
+    <p>Illegal use of characters</p>
+<% } %>
+<table>
+    <tr>
+        <th>First Name</th>
+        <th>Last Name</th>
+        <th>Customer ID</th>
+        <th>Phone Number</th>
+    </tr>   
+    <tr>
+            <td>
+                <%= randomized["firstName"] %>
+            </td>
+            <td>
+                <%= randomized["lastName"] %>
+            </td>
+            <td>
+                <%= randomized["customerID"] %>
+            </td>
+            <td>
+                <%= randomized["phoneNumber"] %>
+            </td>
+    </tr>
+   
+</table>
+
+
+
+</body>
+</html>

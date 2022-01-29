@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+
+<html>
+
+<body>
+    <h1>Every customer registered in the database</h1>
+
+    <form action="/">
+        <input type="submit" value="Return to front page">
+    </form>
+
+    <h2>Customers</h2>
+    <table>
+        <tr>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Customer ID</th>
+            <th>Phone Number</th>
+        </tr>
+        <% for (const customer of customers) { %>
+        <tr>
+                <td>
+                    <%= customer["firstName"] %>
+                </td>
+                <td>
+                    <%= customer["lastName"] %>
+                </td>
+                <td>
+                    <%= customer["customerID"] %>
+                </td>
+                <td>
+                    <%= customer["phoneNumber"] %>
+                </td>
+        </tr>
+        <% } %>
+
+
+    </table>
+
+
+</body>
+
+</html>

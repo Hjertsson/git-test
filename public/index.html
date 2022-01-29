@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<body>
+    <h1>Customer Register</h1>
+    <ul>
+        <li><a href="/fullList">Display entire register </a> </li>
+    </ul>
+
+    <h2>Add a new customer</h2>
+    <form action="addCustomer" method="POST">
+        <input type="text" name="firstName" placeholder="First Name">
+        <input type="text" name="lastName" placeholder="Last Name">
+        <input type="text" name="customerID" placeholder="Customer ID">
+        <input type="text" name="phoneNumber" placeholder="Phone number">
+        <input type="submit" value="Add Customer">
+    </form>
+
+    <h2>Random customer</h2>
+    <form action="/randomize" >
+        <input type="submit" valie="randomize"> 
+    </form>
+
+    <h2>Remove Existing Customer</h2>
+    <form action="removeCustomer" method="POST">
+        <input type="text" name="customerID" placeholder="Enter Customers ID">
+        <input type="submit" value="Remove">
+    </form>
+
+    <h2>Edit existing customer</h2>
+    <form action="editCustomer" method="POST">
+        <input type="text" name="firstName" placeholder="First Name">
+        <input type="text" name="lastName" placeholder="Last Name">
+        <input type="text" name="customerID" placeholder="Customer ID">
+        <input type="text" name="phoneNumber" placeholder="Phone number">
+        <input type="submit" value="Save Edit">
+    </form>
+
+    <h2>Remove all customers</h2>
+    <form action="removeAllCustomers" method="GET">      
+        <input type="submit" value="REMOVE ALL EXISTING CUSTOMERS">
+    </form>
+
+    <h2>Search for specific customer ID</h2>
+    <form action="filterCustomer" method="GET">
+        <input type="text" name="filterCustomer" placeholder="Enter customers ID">
+        <input type="submit" value="Search">
+    </form>
+
+    
+
+
+
+</body>
+</html>
