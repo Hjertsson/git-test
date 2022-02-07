@@ -1,5 +1,5 @@
 const express = require("express");
-const { filterCustomer, randomize, removeAllCustomers, removeCustomer} = require("./server");
+const { filterCustomer, randomize, removeAllCustomers, removeCustomer} = require("./serverFunctions");
 
 test("filterCustomer Test 1", function(){
     filteredCustomer = [];

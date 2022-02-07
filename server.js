@@ -4,7 +4,7 @@ const {use} = require("express/lib/application");
 
 
 const app = express();
-const port = 1500;
+const port = 1700;
 
 //Tells express to use ejs to render html
 app.set("view engine", "ejs");
@@ -93,18 +93,26 @@ app.get("/randomize", function(req, res) {
     }
 });
 
+
+
+
+
 /**
  * Removes specified customer
  * Recieves the id from the user
  * sends the database and the users input to the removeCustomer() function
  */
 
+
+
+/*
 app.post("/removeCustomer", function(req,res) {
     let customerID = req.body["customerID"];
 
     removeCustomer(customerID, db);
     res.send("Removed");
 })
+*/
 
 /**
  * Removes all customers
@@ -112,12 +120,14 @@ app.post("/removeCustomer", function(req,res) {
  * returns a ("database cleared") message.
  */
 
+/*
 app.get("/removeAllCustomers", function(req,res) {
 
    removeAllCustomers(db);
 
    res.send("Database cleared");
 })
+*/
 
 /**
  * Recieves the users input, designates it to customerID.
@@ -125,6 +135,7 @@ app.get("/removeAllCustomers", function(req,res) {
  * renders through the filterCustomers.ejs file
  */
 
+/*
 app.get("/filterCustomer", function(req,res) {
     let customerID = Number(req.query["filterCustomer"]);
 
@@ -134,6 +145,8 @@ app.get("/filterCustomer", function(req,res) {
         customers: customers
     });
 })
+*/
+
 /**
  * Recieves the database and the users input, using the splice() function, it removes the object on the deisred index
  * in order not to ruin the array + customerID syncronisation, it replaces the array with an "empty" string.
@@ -141,10 +154,13 @@ app.get("/filterCustomer", function(req,res) {
  * @param {Number} customerID - The users input, and is the index of the customer that is to be removed
  * @param {*} db - The array that contains the customer database
  */
+
+/*
 function removeCustomer(customerID, db)
 {
     db["customers"].splice(customerID - 1, 1, "empty");
 }
+*/
 
 /**
  * The function goes through the database and removes every index of the array
@@ -152,11 +168,12 @@ function removeCustomer(customerID, db)
  * @param {Array} db - The array that contains the customer database
  */
 
-
+/*
 function removeAllCustomers(db)
 {
     db["customers"].splice(0, db["customers"].length);
 }
+*/
 
 /**
  * @param {Array} db - The array that contains the customer database
@@ -165,6 +182,7 @@ function removeAllCustomers(db)
  * @returns The function returns the object with the same "customerID" as the one the users input
  */
 
+/*
 function filterCustomer(db, customerID) {
 
     let filteredCustomer = [];
@@ -176,6 +194,7 @@ function filterCustomer(db, customerID) {
     
    return filteredCustomer;
 }
+*/
 
 /**
  * using math.floor(math.random()), and the lenght of the array, the math function randomizes an integer between 0 and the lenght of the array
@@ -185,6 +204,7 @@ function filterCustomer(db, customerID) {
  * @returns it returns the object on the randomized index, ensuring the returned index isn't a negtive value.
  */
 
+/*
 function randomize(db){
     let randomizedCustomer = [];
     randomizedCustomer = db["customers"];
@@ -197,11 +217,15 @@ function randomize(db){
         return randomizedCustomer[rndIdx];
     }
 }
+*/
+
+
 
 app.listen(port, function() {
     console.log("Server started")
 });
 
+/*
 module
 .exports = {
     filterCustomer,
@@ -209,3 +233,5 @@ module
     removeAllCustomers,
     removeCustomer   
 }
+*/
+
