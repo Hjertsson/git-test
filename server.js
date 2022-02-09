@@ -1,3 +1,16 @@
+/*
+import {filterCustomer,
+    randomize,
+    removeAllCustomers,
+    removeCustomer
+} from './serverFunctions';
+*/
+
+const { 
+    filterCustomer, 
+    randomize, 
+    removeAllCustomers, 
+    removeCustomer} = require("./serverFunctions"); 
 
 const express = require("express");
 const {use} = require("express/lib/application");
@@ -105,14 +118,14 @@ app.get("/randomize", function(req, res) {
 
 
 
-/*
+
 app.post("/removeCustomer", function(req,res) {
     let customerID = req.body["customerID"];
 
     removeCustomer(customerID, db);
     res.send("Removed");
 })
-*/
+
 
 /**
  * Removes all customers
@@ -120,14 +133,14 @@ app.post("/removeCustomer", function(req,res) {
  * returns a ("database cleared") message.
  */
 
-/*
+
 app.get("/removeAllCustomers", function(req,res) {
 
    removeAllCustomers(db);
 
    res.send("Database cleared");
 })
-*/
+
 
 /**
  * Recieves the users input, designates it to customerID.
@@ -135,7 +148,7 @@ app.get("/removeAllCustomers", function(req,res) {
  * renders through the filterCustomers.ejs file
  */
 
-/*
+
 app.get("/filterCustomer", function(req,res) {
     let customerID = Number(req.query["filterCustomer"]);
 
@@ -145,7 +158,7 @@ app.get("/filterCustomer", function(req,res) {
         customers: customers
     });
 })
-*/
+
 
 /**
  * Recieves the database and the users input, using the splice() function, it removes the object on the deisred index
