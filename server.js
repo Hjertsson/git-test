@@ -1,11 +1,3 @@
-/*
-import {filterCustomer,
-    randomize,
-    removeAllCustomers,
-    removeCustomer
-} from './serverFunctions';
-*/
-
 const { 
     filterCustomer, 
     randomize, 
@@ -59,12 +51,15 @@ app.post("/addCustomer", function(req, res) {
 
     if(customerID > db["customers"].length + 1 || customerID < db["customers"].length -1)
     {
-        res.send("Illegal use of cutomerID")
+        //window.alert('Illegal use of cutomerID')
+        
     }
     else {
         db["customers"].push(dbToAdd);
         
-        res.send("added"); 
+        res.render("pages/confirmed");
+        //res.send("added"); 
+        //window.alert('added');
     }      
 })
 
@@ -92,7 +87,9 @@ app.post("/editCustomer", function(req,res) {
 
     db["customers"].push(dbToAdd);
 
-    res.send("Edited");
+    //res.send("Edited");
+    //window.alert('Edited');
+    res.render("pages/confirmed");
 })
 
 app.get("/randomize", function(req, res) {
@@ -101,9 +98,14 @@ app.get("/randomize", function(req, res) {
     {
     let randomized = randomize(db);
     res.render("pages/randomize", {randomized: randomized});
-    }else{
-        res.send("Not enough customers in the database");
     }
+    
+    else{
+        //res.send("Not enough customers in the database");
+        //window.alert('Not enough customers in the database');
+        
+    }
+    
 });
 
 
@@ -123,7 +125,9 @@ app.post("/removeCustomer", function(req,res) {
     let customerID = req.body["customerID"];
 
     removeCustomer(customerID, db);
-    res.send("Removed");
+    //window.alert('The customer has been removed!')
+    //res.send("Removed");
+    res.render("pages/confirmed");
 })
 
 
@@ -138,7 +142,9 @@ app.get("/removeAllCustomers", function(req,res) {
 
    removeAllCustomers(db);
 
-   res.send("Database cleared");
+   //res.send("Database cleared");
+   //window.alert('All customers has removed!');
+   res.render("pages/confirmed");
 })
 
 
